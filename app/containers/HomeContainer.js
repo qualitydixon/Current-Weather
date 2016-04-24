@@ -23,7 +23,6 @@ var HomeContainer = React.createClass({
         this.setState({
             city: ''
         });
-        //console.log(city + " :)");
         this.context.router.push('/forecast/' + this.state.city)
     },
     render: function() {

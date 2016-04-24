@@ -7,6 +7,7 @@ var ForecastContainer = React.createClass({
     getInitialState: function () {
         return {
             isLoading: true,
+            currentData: {},
             forecastData: {}
         }
     },
@@ -16,8 +17,14 @@ var ForecastContainer = React.createClass({
     makeRequest: function (city) {
         getCurrentWeather(city).then(function (data) {
             this.setState({
-                forecastData: data,
+                currentData: data,
                 isLoading: false,
+            });
+        }.bind(this));
+        
+        getForecast(city).then(function (data) {
+            this.setState({
+                forecastData: data
             });
         }.bind(this));
 
@@ -28,6 +35,7 @@ var ForecastContainer = React.createClass({
       <Forecast
         city={this.props.routeParams.city}
         isLoading={this.state.isLoading}
+        currentData={this.state.currentData} 
         forecastData={this.state.forecastData} />
     )
   }

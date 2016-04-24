@@ -5,7 +5,7 @@ var Home = React.createClass({
   render: function () {
     return (
       <div className='home'>
-      <div style={styles.addMargin}>
+      <div>
         <h1> Enter City and State </h1>
         <form style={styles.flex} onSubmit={this.props.onSubmitCity}>
             <div className='form-group' id='inputBox'>
