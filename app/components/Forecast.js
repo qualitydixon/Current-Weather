@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
-require('../main.css');
 require('../css/weather-icons.min.css');
 
 function ForecastUI (props) {
