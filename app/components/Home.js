@@ -11,7 +11,7 @@ const Home = React.createClass({
             <div className='form-group' id='inputBox'>
               <input
                 className='form-control'
-                placeholder='New York'
+                placeholder='San Francisco'
                 type='text'
                 onChange={this.props.onUpdateCity}
                 value={this.props.city} />
