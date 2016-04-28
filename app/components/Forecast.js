@@ -10,7 +10,7 @@ function forecastEntry(props) {
       <ul className='dataList'>
         <li>{props.forecast.weather[0].main}</li>
         <li>{props.forecast.main.temp} &deg;F</li>
-        <li>Humidity: {props.forecast.main.humidity}%</li>
+        <li>{'Humidity:'} {props.forecast.main.humidity}{'%'}</li>
       </ul>
     </div>
 )
