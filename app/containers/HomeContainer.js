@@ -5,24 +5,24 @@ const HomeContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired,
   },
-  getInitialState: function () {
+  getInitialState() {
     return {
       city: '',
     }
   },
-  handleUpdateCity: function (e) {
+  handleUpdateCity(e) {
     this.setState({
       city: e.target.value,
     })
   },
-  handleSubmitCity: function (e) {
+  handleSubmitCity(e) {
     e.preventDefault()
     this.setState({
       city: '',
     })
     this.context.router.push(`/forecast/${this.state.city}`)
   },
-  render: function () {
+  render() {
     return (
       <Home
         onSubmitCity={this.handleSubmitCity}

@@ -2,7 +2,7 @@ const React = require('react')
 require('../main.less')
 
 const MainContainer = React.createClass({
-  render: function () {
+  render() {
     return (
       <div>
           {this.props.children}

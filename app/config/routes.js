@@ -1,12 +1,12 @@
-var React = require('react')
-var ReactRouter = require('react-router')
-var Router = ReactRouter.Router
-var Route = ReactRouter.Route
-var hashHistory = ReactRouter.hashHistory
-var IndexRoute = ReactRouter.IndexRoute
-var MainContainer = require('../containers/MainContainer')
-var HomeContainer = require('../containers/HomeContainer')
-var ForecastContainer = require('../containers/ForecastContainer')
+const React = require('react')
+const ReactRouter = require('react-router')
+const Router = ReactRouter.Router
+const Route = ReactRouter.Route
+const hashHistory = ReactRouter.hashHistory
+const IndexRoute = ReactRouter.IndexRoute
+const MainContainer = require('../containers/MainContainer')
+const HomeContainer = require('../containers/HomeContainer')
+const ForecastContainer = require('../containers/ForecastContainer')
 
 const routes = (
   <Router history={hashHistory}>

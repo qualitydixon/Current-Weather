@@ -1,20 +1,20 @@
-var React = require('react')
-var Forecast = require('../components/Forecast')
-var getForecast = require('../utils/api').getForecast
-var getCurrentWeather = require('../utils/api').getCurrentWeather
+const React = require('react')
+const Forecast = require('../components/Forecast')
+const getForecast = require('../utils/api').getForecast
+const getCurrentWeather = require('../utils/api').getCurrentWeather
 
 const ForecastContainer = React.createClass({
-  getInitialState: function () {
+  getInitialState() {
     return {
       isLoading: true,
       currentData: {},
       forecastData: {},
     }
   },
-  componentDidMount: function () {
+  componentDidMount() {
     this.makeRequest(this.props.routeParams.city)
   },
-  makeRequest: function (city) {
+  makeRequest(city) {
     getCurrentWeather(city).then(function (data) {
       this.setState({
         currentData: data,
@@ -27,7 +27,7 @@ const ForecastContainer = React.createClass({
       })
     }.bind(this))
   },
-  render: function () {
+  render() {
     return (
       <Forecast
         city={this.props.routeParams.city}

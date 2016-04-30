@@ -1,5 +1,5 @@
-var React = require('react')
-var styles = require('../styles')
+const React = require('react')
+const styles = require('../styles')
 
 
 function Home(props) {
