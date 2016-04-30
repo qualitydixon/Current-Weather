@@ -1,28 +1,33 @@
 var React = require('react')
 var styles = require('../styles')
 
-const Home = React.createClass({
-  render: function () {
-    return (
-      <div className='home'>
-        <form style={styles.flex} onSubmit={this.props.onSubmitCity}>
-          <div className='form-group' id='inputBox'>
-            <input
-              className='form-control'
-              placeholder='San Francisco'
-              type='text'
-              onChange={this.props.onUpdateCity}
-              value={this.props.city} />
-          </div>
-          <div className='form-group' id='getWeatherBtn'>
-            <button onClick={this.props.onSubmitCity} className='btn getBtn' style={styles.space}>
-              {'Get Weather'}
-            </button>
-          </div>
-        </form>
-      </div>
-    )
-  },
-})
+
+function Home(props) {
+  return (
+    <div className='home'>
+      <form style={styles.flex} onSubmit={props.onSubmitCity}>
+        <div className='form-group' id='inputBox'>
+          <input
+            className='form-control'
+            placeholder='San Francisco'
+            type='text'
+            onChange={props.onUpdateCity}
+            value={props.city} />
+        </div>
+        <div className='form-group' id='getWeatherBtn'>
+          <button onClick={props.onSubmitCity} className='btn getBtn' style={styles.space}>
+            {'Get Weather'}
+          </button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
+Home.propTypes = {
+  onSubmitCity: React.PropTypes.func.isRequired,
+  onUpdateCity: React.PropTypes.func.isRequired,
+  city: React.PropTypes.string.isRequired,
+}
 
 module.exports = Home
