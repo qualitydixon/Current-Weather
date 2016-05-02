@@ -1,6 +1,6 @@
-var axios = require('axios')
-var _baseURL = 'http://api.openweathermap.org/data/2.5/'
-var _APIKEY = 'd951696850f04dc2ba2467873aa8e866'
+const axios = require('axios')
+const _baseURL = 'http://api.openweathermap.org/data/2.5/'
+const _APIKEY = 'd951696850f04dc2ba2467873aa8e866'
 
 function getCurrentWeather(city) {
   return axios.get(`${_baseURL}weather?q=${city}&units=imperial&type=accurate&APPID=${_APIKEY}`)
