@@ -1,9 +1,11 @@
 const React = require('react')
 const Forecast = require('../components/Forecast')
 const getForecast = require('../utils/api').getForecast
-const getCurrentWeather = require('../utils/api').getCurrentWeather
 
 const ForecastContainer = React.createClass({
+  propTypes: {
+    routeParams: React.PropTypes.object.isRequired,
+  },
   getInitialState() {
     return {
       isCurrentLoading: true,
@@ -16,12 +18,12 @@ const ForecastContainer = React.createClass({
     this.makeRequest(this.props.routeParams.city)
   },
   makeRequest(city) {
-    getForecast(city).then(function (data) {
+    getForecast(city).then((data) => {
       this.setState({
         forecastData: data,
         isForecastLoading: false,
       })
-    }.bind(this))
+    })
   },
   render() {
     return (

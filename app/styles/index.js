@@ -5,6 +5,7 @@ const styles = {
   flex: {
     display: 'flex',
     alignItems: 'center',
+    flexDirection: 'column',
   },
   city: {
     fontSize: '8vh',

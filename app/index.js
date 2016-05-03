@@ -1,5 +1,4 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var routes = require('./config/routes');
+const ReactDOM = require('react-dom');
+const routes = require('./config/routes');
 
-ReactDOM.render(routes, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById('app'))
