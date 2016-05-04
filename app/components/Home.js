@@ -5,7 +5,7 @@ const styles = require('../styles')
 function Home(props) {
   return (
     <div className='home'>
-      <form style={styles.flex} onSubmit={props.onSubmitCity}>
+      <form className='form' onSubmit={props.onSubmitCity}>
         <div className='form-group' id='inputBox'>
           <input
             className='form-control'
