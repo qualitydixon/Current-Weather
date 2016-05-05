@@ -24,7 +24,7 @@ function ForecastUI(props) {
   const city = props.city.toUpperCase()
   return (
     <div className='forecastUI'>
-      <h1 style={styles.city}>{city}</h1>
+      <h1 className='cityHeader'>{city}</h1>
       <ul className='forecastList'>
         {props.forecastData.list.map((day, idx) => <ForecastEntry key={idx} idx={idx} day={day} />)}
       </ul>

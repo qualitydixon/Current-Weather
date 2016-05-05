@@ -1,4 +1,5 @@
-const React = require('react')
+import React, { PropTypes } from 'react'
+import { getCurrentWeatherWithCoords } from '../utils/api'
 const Home = require('../components/Home')
 
 const HomeContainer = React.createClass({
@@ -7,27 +8,27 @@ const HomeContainer = React.createClass({
   },
   getInitialState() {
     return {
-      city: '',
+      localWeather: {},
+      isLocalWeatherLoading: true,
     }
   },
-  handleUpdateCity(e) {
-    this.setState({
-      city: e.target.value,
-    })
-  },
-  handleSubmitCity(e) {
-    e.preventDefault()
-    this.setState({
-      city: '',
-    })
-    this.context.router.push(`/forecast/${this.state.city}`)
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        getCurrentWeatherWithCoords(position.coords.latitude, position.coords.longitude)
+          .then((data) => {
+            console.log(data)
+            this.setState({
+              localWeather: data,
+              isLocalWeatherLoading: false,
+            })
+          })
+      })
+    }
   },
   render() {
     return (
-      <Home
-        onSubmitCity={this.handleSubmitCity}
-        onUpdateCity={this.handleUpdateCity}
-        city={this.state.city} />
+      <Home />
     )
   },
 })

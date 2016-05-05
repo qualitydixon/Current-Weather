@@ -1,4 +1,4 @@
-const React = require('react')
+import React from 'react'
 const Forecast = require('../components/Forecast')
 const getForecast = require('../utils/api').getForecast
 
