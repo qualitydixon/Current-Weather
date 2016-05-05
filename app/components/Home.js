@@ -1,16 +1,17 @@
-const React = require('react')
-const styles = require('../styles')
-
+import React, { PropTypes } from 'react'
 
 function Home(props) {
   return (
     <div className='home'>
-      {'Hello from Home'}
+      <div className='cityHeader'>
+        {props.city}
+      </div>
     </div>
   )
 }
 
 Home.propTypes = {
+  city: PropTypes.string.isRequired,
 }
 
 module.exports = Home

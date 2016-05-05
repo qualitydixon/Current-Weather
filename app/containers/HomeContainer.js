@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { getCurrentWeatherWithCoords } from '../utils/api'
+import WeatherCard from '../components/WeatherCard'
 const Home = require('../components/Home')
 
 const HomeContainer = React.createClass({
@@ -27,9 +28,14 @@ const HomeContainer = React.createClass({
     }
   },
   render() {
-    return (
-      <Home />
-    )
+    return this.state.isLocalWeatherLoading === true
+        ? <div>{'Loading'}</div>
+        : <WeatherCard
+          city={this.state.localWeather.name}
+          id={this.state.localWeather.weather[0].id}
+          temp={this.state.localWeather.main.temp}
+          main={this.state.localWeather.weather[0].description}
+          humidity={this.state.localWeather.main.humidity} />
   },
 })
 

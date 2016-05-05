@@ -7,7 +7,7 @@ export default function Search(props) {
         <div className='form-group' id='inputBox'>
           <input
             className='form-control'
-            placeholder='San Francisco'
+            placeholder='Ex: San Francisco'
             type='text'
             onChange={props.onUpdateCity}
             value={props.city} />

@@ -5,5 +5,4 @@ Get the current weather for any city in the world! Built with React and React-Ro
 
 ## Todo
 
-- Add nav bar and re-locate search form
-- Use browser to get current weather at users location
+- Animate icons
