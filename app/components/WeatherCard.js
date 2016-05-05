@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 export default function WeatherCard(props) {
   const iconClasses = `icon wi wi-owm-${props.id}`
   return (
-    <div>
+    <div className='weatherCard'>
       <i className={iconClasses}></i>
       <ul className='dataList'>
         <li>{props.main}</li>

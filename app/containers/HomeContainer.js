@@ -29,13 +29,15 @@ const HomeContainer = React.createClass({
   },
   render() {
     return this.state.isLocalWeatherLoading === true
-        ? <div>{'Loading'}</div>
-        : <WeatherCard
-          city={this.state.localWeather.name}
-          id={this.state.localWeather.weather[0].id}
-          temp={this.state.localWeather.main.temp}
-          main={this.state.localWeather.weather[0].description}
-          humidity={this.state.localWeather.main.humidity} />
+        ? <div className='loading'>{'Loading'}</div>
+        : <div>
+          <div className='cityHeader'>{this.state.localWeather.name}</div>
+          <WeatherCard
+            id={this.state.localWeather.weather[0].id}
+            temp={this.state.localWeather.main.temp}
+            main={this.state.localWeather.weather[0].description}
+            humidity={this.state.localWeather.main.humidity} />
+        </div>
   },
 })
 
