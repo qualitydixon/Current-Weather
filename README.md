@@ -6,3 +6,4 @@ Get the current weather for any city in the world! Built with React and React-Ro
 ## Todo
 
 - Animate icons
+- Update Screenshots
