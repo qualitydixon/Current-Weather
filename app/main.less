@@ -10,6 +10,9 @@
 @btnColor: #EB6E80;
 @navBackground: #0b0d0f;
 
+@rain: #B0BEC5;
+@sun: #FDD835;
+
 
 body {
     background: @background;
@@ -19,8 +22,8 @@ body {
 
 .home {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 10vh;
 }
 
@@ -52,6 +55,10 @@ body {
     margin-bottom: 20px;
 }
 
+.homeIcon {
+    font-size: 10vw;
+}
+
 .cityHeader {
     font-family: @cityFont;
     font-size: 80px;
@@ -59,13 +66,17 @@ body {
 }
 
 .weatherCard {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dataList {
+    text-align: center;
     list-style-type: none;
-    font-size: 20px;
-    margin-right: 20px;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
 }
 
 #inputBox, #getWeatherBtn {
@@ -86,7 +97,9 @@ body {
 }
 
 .forecastList {
-    display: flex; 
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .loading {
@@ -104,16 +117,16 @@ body {
 
 .wi-owm-800 { 
     .rotate;
-    color: #FDD835;
+    color: @sun;
 }
 
 .wi-owm-500, .wi-owm-501 { 
     .rock;
     .rotateCounterClockwise;
-    color: #607D8B;
+    color: @rain;
 }
 
-.wi-owm-801, .wi-owm-802 { 
+.wi-owm-801, .wi-owm-802, .wi-owm-803 { 
     .translate;
     .slide;
 }

@@ -1,52 +1,29 @@
-const React = require('react')
-const styles = require('../styles')
+import React, { PropTypes } from 'react'
+import WeatherCard from './WeatherCard'
+import { formatDate } from '../utils/helpers'
 require('../css/weather-icons.min.css')
-
-function ForecastEntry(props) {
-  const iconClasses = `icon wi wi-owm-${props.day.weather[0].id}`
-  return (
-    <div style={styles.flex}>
-      <i className={iconClasses}></i>
-      <ul className='dataList'>
-        <li>{props.day.weather[0].main}</li>
-        <li>{props.day.temp.day} {'\u00b0 F'}</li>
-        <li>{'Hum:'} {props.day.humidity}{'%'}</li>
-      </ul>
-    </div>
-)
-}
-
-ForecastEntry.propTypes = {
-  day: React.PropTypes.object.isRequired,
-}
-
-function ForecastUI(props) {
-  const city = props.city.toLowerCase()
-  return (
-    <div className='forecastUI'>
-      <h1 className='cityHeader'>{city}</h1>
-      <ul className='forecastList'>
-        {props.forecastData.list.map((day, idx) => <ForecastEntry key={idx} idx={idx} day={day} />)}
-      </ul>
-    </div>
-    )
-}
-
-ForecastUI.propTypes = {
-  city: React.PropTypes.string.isRequired,
-  forecastData: React.PropTypes.object.isRequired,
-}
 
 function Forecast(props) {
   return (props.isForecastLoading === true)
-    ? <div className='loading'> {'Loading'} </div>
-    : <ForecastUI city={props.city} forecastData={props.forecastData} />
+    ? <div className='loading'>{'Loading'}</div>
+    : <div className='forecastUI'>
+      <h1 className='cityHeader'>{props.city}</h1>
+      <ul className='forecastList'>
+        {props.forecastData.list.map((day, idx) => <WeatherCard
+          key={day.dt}
+          id={day.weather[0].id}
+          main={day.weather[0].main}
+          temp={day.temp}
+          humidity={day.humidity}
+          date={formatDate(idx)} />)}
+      </ul>
+    </div>
 }
 
 Forecast.propTypes = {
-  isForecastLoading: React.PropTypes.bool.isRequired,
-  forecastData: React.PropTypes.object.isRequired,
-  city: React.PropTypes.string.isRequired,
+  isForecastLoading: PropTypes.bool.isRequired,
+  forecastData: PropTypes.object.isRequired,
+  city: PropTypes.string.isRequired,
 }
 
 module.exports = Forecast

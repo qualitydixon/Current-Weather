@@ -6,9 +6,10 @@ export default function WeatherCard(props) {
     <div className='weatherCard'>
       <i className={iconClasses}></i>
       <ul className='dataList'>
-        <li>{props.main}</li>
-        <li>{props.temp} {'\u00b0 F'}</li>
-        <li>{'Hum:'} {props.humidity}{'%'}</li>
+        <li>{props.date}</li>
+        <li>{Math.round(props.temp.max)}{'\u00b0'} {Math.round(props.temp.min)}{'\u00b0'}</li>
+        <li>{props.main.toLowerCase()}</li>
+        <li>{'hum:'} {props.humidity}{'%'}</li>
       </ul>
     </div>
 )
@@ -17,6 +18,7 @@ export default function WeatherCard(props) {
 WeatherCard.propTypes = {
   main: PropTypes.string.isRequired,
   humidity: PropTypes.number.isRequired,
-  temp: PropTypes.number.isRequired,
+  temp: PropTypes.object.isRequired,
   id: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
 }

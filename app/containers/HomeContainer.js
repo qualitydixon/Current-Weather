@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { getCurrentWeatherWithCoords } from '../utils/api'
-import WeatherCard from '../components/WeatherCard'
-const Home = require('../components/Home')
+import { formatTime } from '../utils/helpers'
+import Home from '../components/Home'
 
 const HomeContainer = React.createClass({
   contextTypes: {
@@ -28,6 +28,7 @@ const HomeContainer = React.createClass({
     }
   },
   render() {
+    const data = this.state.localWeather
     return this.state.isLocalWeatherLoading === true
         ? <div className='loading'>{'Loading'}</div>
         : <div>
@@ -36,7 +37,9 @@ const HomeContainer = React.createClass({
             id={this.state.localWeather.weather[0].id}
             temp={this.state.localWeather.main.temp}
             main={this.state.localWeather.weather[0].description}
-            humidity={this.state.localWeather.main.humidity} />
+            humidity={this.state.localWeather.main.humidity}
+            sunrise={formatTime(data.sys.sunrise).substr(0, 5)}
+            sunset={formatTime(data.sys.sunset).substr(0, 5)} />
         </div>
   },
 })
