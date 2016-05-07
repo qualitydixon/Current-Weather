@@ -38,7 +38,7 @@ const HomeContainer = React.createClass({
             temp={this.state.localWeather.main.temp}
             main={this.state.localWeather.weather[0].description}
             humidity={this.state.localWeather.main.humidity}
-            sunrise={formatTime(data.sys.sunrise).substr(0, 5)}
+            sunrise={formatTime(data.sys.sunrise).substr(1, 4)}
             sunset={formatTime(data.sys.sunset).substr(0, 5)} />
         </div>
   },

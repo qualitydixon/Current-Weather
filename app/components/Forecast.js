@@ -4,7 +4,7 @@ import { formatDate } from '../utils/helpers'
 require('../css/weather-icons.min.css')
 
 function Forecast(props) {
-  return (props.isForecastLoading === true)
+  return (props.isLoading === true)
     ? <div className='loading'>{'Loading'}</div>
     : <div className='forecastUI'>
       <h1 className='cityHeader'>{props.city}</h1>
@@ -12,7 +12,7 @@ function Forecast(props) {
         {props.forecastData.list.map((day, idx) => <WeatherCard
           key={day.dt}
           id={day.weather[0].id}
-          main={day.weather[0].main}
+          description={day.weather[0].description}
           temp={day.temp}
           humidity={day.humidity}
           date={formatDate(idx)} />)}
@@ -21,7 +21,7 @@ function Forecast(props) {
 }
 
 Forecast.propTypes = {
-  isForecastLoading: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   forecastData: PropTypes.object.isRequired,
   city: PropTypes.string.isRequired,
 }

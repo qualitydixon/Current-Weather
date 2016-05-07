@@ -8,8 +8,7 @@ const ForecastContainer = React.createClass({
   },
   getInitialState() {
     return {
-      isCurrentLoading: true,
-      isForecastLoading: true,
+      isLoading: true,
       currentData: {},
       forecastData: {},
     }
@@ -17,12 +16,18 @@ const ForecastContainer = React.createClass({
   componentDidMount() {
     this.makeRequest(this.props.routeParams.city)
   },
+  componentWillReceiveProps(nextProps) {
+    this.makeRequest(nextProps.routeParams.city)
+    this.setState({
+      isLoading: true,
+    })
+  },
   makeRequest(city) {
     getForecast(city).then((data) => {
       console.log(data)
       this.setState({
         forecastData: data,
-        isForecastLoading: false,
+        isLoading: false,
       })
     })
   },
@@ -30,7 +35,7 @@ const ForecastContainer = React.createClass({
     return (
       <Forecast
         city={this.props.routeParams.city}
-        isForecastLoading={this.state.isForecastLoading}
+        isLoading={this.state.isLoading}
         forecastData={this.state.forecastData} />
     )
   },

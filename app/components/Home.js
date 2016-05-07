@@ -7,12 +7,12 @@ function Home(props) {
       <div>
         <i className={iconClasses}></i>
       </div>
-      <ul className='dataList'>
+      <ul className='homeDataList'>
         <li>{props.main}</li>
-        <li>{props.temp} {'\u00b0F'}</li>
+        <li>{Math.round(props.temp)}{'\u00b0'}</li>
         <li>{'hum:'} {props.humidity}{'%'}</li>
-        <li>{'sunrise: '}{props.sunrise}</li>
-        <li>{'sunset: '}{props.sunset}</li>
+        <li>{'sunrise '}{props.sunrise}</li>
+        <li>{'sunset '}{props.sunset}</li>
       </ul>
     </div>
   )

@@ -5,8 +5,4 @@ Get the current weather for any city in the world! Built with React and React-Ro
 
 ## Todo
 
-- Animate & Color icons
-- Update Screenshots
-- Maybe add time for sunrise/sunset to local weather
-- Weather data does not update when you search from forecast route
-- Add date to forecast
+- Update screenshots.

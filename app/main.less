@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);
-@import url(https://fonts.googleapis.com/css?family=Courgette);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 // @background: #0F1626;
@@ -24,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .navContainer {
@@ -53,10 +52,13 @@ body {
     font-size: 5vw;
     margin-top: 10px;
     margin-bottom: 20px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
 }
 
 .homeIcon {
     font-size: 10vw;
+    margin-right: 50px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
 }
 
 .cityHeader {
@@ -75,6 +77,14 @@ body {
     text-align: center;
     list-style-type: none;
     font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.homeDataList {
+    text-align: center;
+    list-style-type: none;
+    font-size: 26px;
     margin: 0;
     padding: 0;
 }
@@ -120,7 +130,7 @@ body {
     color: @sun;
 }
 
-.wi-owm-500, .wi-owm-501 { 
+.wi-owm-500, .wi-owm-501, .wi-owm-502 { 
     .rock;
     .rotateCounterClockwise;
     color: @rain;
@@ -136,10 +146,9 @@ body {
 }
 
 .rotate {
-    -webkit-animation:spin 6s linear infinite;
-    -moz-animation:spin 6s linear infinite;
-    animation:spin 6s linear infinite;
-    animation-direction: alternate-reverse;
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } } /* Chrome, Safari, Opera */
