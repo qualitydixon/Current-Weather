@@ -21,7 +21,7 @@ ForecastEntry.propTypes = {
 }
 
 function ForecastUI(props) {
-  const city = props.city.toUpperCase()
+  const city = props.city.toLowerCase()
   return (
     <div className='forecastUI'>
       <h1 className='cityHeader'>{city}</h1>

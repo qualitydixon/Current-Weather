@@ -32,7 +32,7 @@ const HomeContainer = React.createClass({
         ? <div className='loading'>{'Loading'}</div>
         : <div>
           <div className='cityHeader'>{this.state.localWeather.name}</div>
-          <WeatherCard
+          <Home
             id={this.state.localWeather.weather[0].id}
             temp={this.state.localWeather.main.temp}
             main={this.state.localWeather.weather[0].description}
