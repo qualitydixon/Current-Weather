@@ -8,3 +8,4 @@ Get the current weather for any city in the world! Built with React and React-Ro
 - Update screenshots.
 - Add gifs.
 - Maybe add wind speed/direction.
+- Catch error for an incorrect city.
