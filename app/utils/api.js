@@ -1,5 +1,5 @@
 const axios = require('axios')
-const _baseURL = '//api.openweathermap.org/data/2.5/'
+const _baseURL = 'http://api.openweathermap.org/data/2.5/'
 const _APIKEY = 'd951696850f04dc2ba2467873aa8e866'
 
 
