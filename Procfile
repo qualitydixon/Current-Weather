@@ -1,1 +1,1 @@
-web: node dist/index_bundle.js
+web: npm run prod
