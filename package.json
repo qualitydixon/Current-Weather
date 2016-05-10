@@ -9,6 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "prod": "webpack -p",
+    "postinstall": "webpack -p --config webpack.prod.config.js",
     "lint": "eslint app/."
   },
   "author": "",
@@ -16,7 +17,9 @@
   "dependencies": {
     "axios": "^0.9.1",
     "babel-core": "^6.7.2",
+    "express": "^4.13.4",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.10.0",
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "react": "^0.14.7",
@@ -24,8 +27,7 @@
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
-    "html-webpack-plugin": "^2.10.0"
+    "webpack": "^1.12.14"
   },
   "devDependencies": {
     "babel-core": "^6.6.5",
