@@ -2,6 +2,9 @@
   "name": "weather",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "5.5.0"
+  },
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
