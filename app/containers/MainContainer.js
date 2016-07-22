@@ -1,31 +1,26 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import Navigation from '../components/Navigation'
-require('../main.less')
+import '../stylesheets/main.less'
 
-const MainContainer = React.createClass({
-  propTypes: {
-    children: React.PropTypes.node.isRequired,
-  },
-  contextTypes: {
-    router: React.PropTypes.object.isRequired,
-  },
-  getInitialState() {
-    return {
+export default class MainContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       city: '',
     }
-  },
+  }
   handleUpdateCity(e) {
     this.setState({
       city: e.target.value,
     })
-  },
+  }
   handleSubmitCity(e) {
     e.preventDefault()
     this.setState({
       city: '',
     })
     this.context.router.push(`/forecast/${this.state.city}`)
-  },
+  }
   render() {
     return (
       <div>
@@ -36,7 +31,13 @@ const MainContainer = React.createClass({
         {this.props.children}
       </div>
     )
-  },
-})
+  }
+}
 
-module.exports = MainContainer
+MainContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+MainContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+}

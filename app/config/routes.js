@@ -1,12 +1,8 @@
-const React = require('react')
-const ReactRouter = require('react-router')
-const Router = ReactRouter.Router
-const Route = ReactRouter.Route
-const hashHistory = ReactRouter.hashHistory
-const IndexRoute = ReactRouter.IndexRoute
-const MainContainer = require('../containers/MainContainer')
-const HomeContainer = require('../containers/HomeContainer')
-const ForecastContainer = require('../containers/ForecastContainer')
+import React from 'react'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import MainContainer from '../containers/MainContainer'
+import HomeContainer from '../containers/HomeContainer'
+import ForecastContainer from '../containers/ForecastContainer'
 
 const routes = (
   <Router history={hashHistory}>
