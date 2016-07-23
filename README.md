@@ -13,3 +13,4 @@ Note: Must use firefox or edge to automatically get the current weather at your 
 - Add gifs.
 - Maybe add wind speed/direction.
 - Catch error for an incorrect city.
+- Display random city on homepage.
