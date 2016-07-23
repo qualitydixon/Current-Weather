@@ -25,8 +25,8 @@ export default class MainContainer extends Component {
     return (
       <div>
         <Navigation
-          onSubmitCity={this.handleSubmitCity}
-          onUpdateCity={this.handleUpdateCity}
+          onSubmitCity={(e) => this.handleSubmitCity(e)}
+          onUpdateCity={(e) => this.handleUpdateCity(e)}
           city={this.state.city} />
         {this.props.children}
       </div>
