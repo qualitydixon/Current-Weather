@@ -10,16 +10,17 @@ function formatURLWithCoords(latitude, longitude) {
 function formatURLWithCity(city) {
   return `${_baseURL}forecast/daily?q=${city}&units=imperial&type=accurate&APPID=${_APIKEY}&cnt=5`
 }
-function getCurrentWeatherWithCoords(latitude, longitude) {
+
+export function getCurrentWeatherWithCoords(latitude, longitude) {
   return axios.get(formatURLWithCoords(latitude, longitude))
         .then(currentWeatherData => currentWeatherData.data)
 }
 
-function getForecast(city) {
+export function getForecast(city) {
   return axios.get(formatURLWithCity(city)).then(forecastData => forecastData.data)
 }
 
-module.exports = {
-  getCurrentWeatherWithCoords,
-  getForecast,
+export function getCurrentWeather(city) {
+  return axios.get(`${_baseURL}weather?q=${city}&APPID=${_APIKEY}`)
 }
+
