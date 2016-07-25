@@ -1,7 +1,7 @@
 # Current-Weather
 Get the weather for your city plus a 5 day forecast for any city in the world! Built with React and React-Router.
 
-[LIVE DEMO](http://shrouded-fortress-65272.herokuapp.com/)
+[LIVE DEMO](http://qualitydixon.github.io/Current-Weather/)
 
 Note: Must use firefox or edge to automatically get the current weather at your location.
 

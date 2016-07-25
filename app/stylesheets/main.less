@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+// @background: #0F1626;
+@background: #2C3E50;
+@mainFont: Montserrat;
+@cityFont: Montserrat;
+@textColor: #F5F5F5;
+@btnColor: #EB6E80;
+@navBackground: #0b0d0f;
+
+@rain: #B0BEC5;
+@sun: #FDD835;
+
+
+body {
+    background: @background;
+    font-family: @mainFont;
+    color: @textColor;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.navContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0px 10px;
+}
+
+.navContainer ul {
+  display: flex;
+  padding: 0;
+}
+
+.navContainer li {
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.searchContainer {
+    display: flex;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 5vw;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
+}
+
+.homeIcon {
+    font-size: 10vw;
+    margin-right: 50px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !important;
+}
+
+.cityHeader {
+    font-family: @cityFont;
+    font-size: 80px;
+    text-align: center;
+}
+
+.weatherCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataList {
+    text-align: center;
+    list-style-type: none;
+    font-size: 1.5vw;
+    margin: 0;
+    padding: 0;
+}
+
+.homeDataList {
+    text-align: center;
+    list-style-type: none;
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+#inputBox, #getWeatherBtn {
+    width: 200px;
+}
+
+.getBtn {
+    background: @btnColor;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.forecastUI {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.forecastList {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loading {
+    font-size: 15vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wi-owm-800 { 
+    .rotate;
+    color: @sun;
+}
+
+.wi-owm-500, .wi-owm-501, .wi-owm-502 { 
+    .rock;
+    .rotateCounterClockwise;
+    color: @rain;
+}
+
+.wi-owm-801, .wi-owm-802, .wi-owm-803 { 
+    .translate;
+    .slide;
+}
+
+.wi-owm-804 {
+    .pulse;
+}
+
+.rotate {
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } } /* Chrome, Safari, Opera */
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+.pulse {
+    -webkit-animation: pulse 1s linear infinite;
+    -moz-animation: pulse 1s linear infinite;
+    animation: pulse 1s linear infinite;
+    animation-direction: alternate-reverse;
+}
+@-moz-keyframes pulse { 100% { -moz-transform: scale(1.2,1.2); } }
+@-webkit-keyframes pulse { 100% { -webkit-transform: scale(1.2,1.2); } } /* Chrome, Safari, Opera */
+@keyframes pulse { 100% { -webkit-transform: scale(1.2,1.2); transform: scale(1.2,1.2); } }
+
+.rock {
+    -webkit-animation: rock .5s linear infinite;
+    -moz-animation: rock .5s linear infinite;
+    animation: rock .5s linear infinite;
+    animation-direction: alternate-reverse;
+}
+/* @keyframes duration | timing-function | delay | 
+   iteration-count | direction | fill-mode | play-state | name */
+@-moz-keyframes rock { 100% { -moz-transform: rotate(5deg); } }
+@-webkit-keyframes rock { 100% { -webkit-transform: rotate(5deg); } }
+@keyframes rock { 100% { -webkit-transform: rotate(5deg); transform: rotate(5deg); } }
+
+.slide {
+    -webkit-animation: slide 1s linear infinite;
+    -moz-animation: slide 1s linear infinite;
+    animation: slide 1s linear infinite;
+    animation-direction: alternate-reverse;
+}
+/* @keyframes duration | timing-function | delay | 
+   iteration-count | direction | fill-mode | play-state | name */
+@-moz-keyframes slide { 100% { -moz-transform: translateX(20px); } }
+@-webkit-keyframes slide { 100% { -webkit-transform: translateX(20px); } }
+@keyframes slide { 100% { -webkit-transform: translateX(20px); transform: translateX(20px); } }
+
+.rotateCounterClockwise {
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    transform: rotate(-5deg);
+}
+
+.translate {
+    -ms-transform: translateX(-10px); /* IE 9 */
+    -webkit-transform: translateX(-10px); /* Chrome, Safari, Opera */
+    transform: translateX(-10px);
+}

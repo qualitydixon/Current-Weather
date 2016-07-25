@@ -9,6 +9,7 @@ module.exports = {
   entry: [
     './app/index.js',
   ],
+  devtool: 'cheap-module-inline-source-map',
   output: {
     path: `${__dirname}/dist`,
     filename: 'index_bundle.js',
