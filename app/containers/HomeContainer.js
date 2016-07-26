@@ -13,37 +13,15 @@ export default class HomeContainer extends Component {
     }
   }
   componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        getCurrentWeatherWithCoords(position.coords.latitude, position.coords.longitude)
-          .then(data => {
-            console.log(data)
-            this.setState({
-              localWeather: data,
-              isLocalWeatherLoading: false,
-            })
-          })
-      }, error => {
-        console.log(error)
-        console.log(cities)
-        getCurrentWeather(cities[1])
-          .then(data => {
-            console.log(data)
-            this.setState({
-              localWeather: data,
-              isLocalWeatherLoading: false,
-            })
-          })
-      })
-    } else {
-      getCurrentWeather(cities[1])
-        .then(data => {
-          this.setState({
-            localWeather: data,
-            isLocalWeatherLoading: false,
-          })
+    console.log(cities)
+    getCurrentWeather(cities[1])
+      .then(data => {
+        console.log(data.data)
+        this.setState({
+          localWeather: data.data,
+          isLocalWeatherLoading: false,
         })
-    }
+      })
   }
   render() {
     const data = this.state.localWeather
