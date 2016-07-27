@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { getCurrentWeatherWithCoords, getCurrentWeather } from '../utils/api'
-import { formatTime } from '../utils/helpers'
+import { formatTime, getRandomIndex } from '../utils/helpers'
 import { cities } from '../constants/constants'
 import Home from '../components/Home'
 
@@ -14,7 +14,7 @@ export default class HomeContainer extends Component {
   }
   componentDidMount() {
     console.log(cities)
-    getCurrentWeather(cities[1])
+    getCurrentWeather(cities[getRandomIndex(cities.length)])
       .then(data => {
         console.log(data.data)
         this.setState({

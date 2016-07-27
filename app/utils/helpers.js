@@ -8,3 +8,7 @@ export function formatDate(offset) {
   day.setDate(day.getDate() + offset)
   return day.toDateString().substr(0, 10)
 }
+
+export function getRandomIndex(len) {
+  return Math.floor(Math.random() * (len + 1))
+}

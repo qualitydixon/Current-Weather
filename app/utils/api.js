@@ -21,6 +21,6 @@ export function getForecast(city) {
 }
 
 export function getCurrentWeather(city) {
-  return axios.get(`${_baseURL}weather?q=${city}&APPID=${_APIKEY}`)
+  return axios.get(`${_baseURL}weather?q=${city}&units=imperial&APPID=${_APIKEY}`)
 }
 
