@@ -1,5 +1,5 @@
-const config = require('./webpack.config.js')
-const webpack = require('webpack')
+import config from './webpack.config.js'
+import webpack from 'webpack'
 
 config.plugins.push(
   new webpack.DefinePlugin({
